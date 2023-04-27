@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
 
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div id="messages">
+    <div id="chat">
 
     </div>
 
-    <form>
-        <input type="text">
-        <button type="submit">Enviar</button>
+    <form name="message_form" id="message_form">
+        <input type="text" name="msg" id="message">
+        <button type="submit" id="msg_btn">Enviar</button>
     </form>
 
-    <script src="chat.js"></script>
+
+    <!-- uma vez que importamos socket.js podemos usa-lo em chat.js -->
+    <script src="/socket.io/socket.io.js"></script> 
+    <script src="./chat.js"></script>
 </body>
 </html>
