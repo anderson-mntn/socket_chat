@@ -1,10 +1,11 @@
-const socket = io('localhost:3000');
+const room = window.location.pathname.replace(/\//g, '') // remove barras
+
+const socket = io(`localhost:3000/${room}`);
 
 let userName = null;
 
 socket.on('update_messages', (messages) =>{
     
-    // Função criada por nós
     updateChatMessages(messages);
 });
 
@@ -20,8 +21,6 @@ function updateChatMessages(messages){
     list_messages += '</ul>';
 
     chat.innerHTML = list_messages;
-
-   
 
 }
 
